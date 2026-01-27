@@ -8,18 +8,6 @@
   padding: 24px;
 }
 
-.modal-overlay[data-visible='false'] {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.modal-overlay[data-visible='true'] {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 .modal-window {
   position: relative;
 
