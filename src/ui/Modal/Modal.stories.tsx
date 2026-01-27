@@ -7,7 +7,6 @@ const meta: Meta<typeof Modal> = {
   title: 'ui/Modal/Modal',
   component: Modal,
   argTypes: {
-    visible: { control: 'boolean' },
     children: { control: false },
   },
 };
@@ -17,11 +16,8 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 export const ConfirmLike: Story = {
-  args: {
-    visible: true,
-  },
-  render: (args) => (
-    <Modal {...args}>
+  render: () => (
+    <Modal onClose={() => console.log('Close clicked')}>
       <div className="confirm">
         <div className="confirm-header">
           <span className="confirm-title">Question</span>
@@ -43,26 +39,17 @@ export const ConfirmLike: Story = {
 };
 
 export const Closed: Story = {
-  args: {
-    visible: false,
-  },
-  render: (args) => (
+  render: () => (
     <div style={{ padding: 20 }}>
-      <p>Page content behind modal</p>
-
-      <Modal {...args}>
-        <div>This content is hidden</div>
-      </Modal>
+      <p>Page content without modal</p>
+      <p style={{ color: '#999', fontSize: '14px' }}>Modal is not rendered (conditional rendering pattern)</p>
     </div>
   ),
 };
 
 export const OnlyText: Story = {
-  args: {
-    visible: true,
-  },
-  render: (args) => (
-    <Modal {...args}>
+  render: () => (
+    <Modal onClose={() => console.log('Close clicked')}>
       <p style={{ margin: 0 }}>This is a simple modal with text only</p>
     </Modal>
   ),
