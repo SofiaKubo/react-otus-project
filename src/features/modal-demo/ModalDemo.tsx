@@ -6,6 +6,18 @@ export default function ModalDemo() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputText, setInputText] = useState('');
 
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(event.target.value);
+  };
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="modal-demo">
       <h2 className="modal-demo__title">Modal Window Demo</h2>
@@ -19,18 +31,18 @@ export default function ModalDemo() {
           id="modal-text"
           type="text"
           value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
+          onChange={handleInputChange}
           placeholder="Enter your text here..."
           className="modal-demo__input"
         />
       </div>
 
-      <button onClick={() => setIsOpen(true)} className="modal-demo__button">
+      <button onClick={handleOpenModal} className="modal-demo__button">
         Open Modal Window
       </button>
 
       {isOpen && (
-        <Modal onClose={() => setIsOpen(false)}>
+        <Modal onClose={handleCloseModal}>
           <p className="modal-demo__modal-content">{inputText || 'You did not enter any text'}</p>
         </Modal>
       )}
