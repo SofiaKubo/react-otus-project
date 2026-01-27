@@ -14,6 +14,9 @@ export default function Modal({ visible, children, className, onClose }: ModalPr
       className={['modal-overlay', className].filter(Boolean).join(' ')}
       data-visible={visible ? 'true' : 'false'}
       aria-hidden={!visible}
+      onClick={onClose}
+      role={visible ? 'dialog' : undefined}
+      aria-modal={visible ? 'true' : undefined}
     >
       <div className="modal-window" role="dialog" aria-modal="true">
         <button className="modal-close" aria-label="Close" type="button" onClick={onClose}>
