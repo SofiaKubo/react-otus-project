@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Product } from '../../model/types';
 import './ProductPreview.css';
-import CartButton from '../../../../features/cart/ui/CartButton/CartButton';
+import CartButton from '../../../../ui/CartButton/CartButton';
 
 export interface ProductPreviewProps {
   product: Product;

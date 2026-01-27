@@ -4,7 +4,7 @@ import Modal from './Modal';
 import './Modal.stories.css';
 
 const meta: Meta<typeof Modal> = {
-  title: 'shared/Modal',
+  title: 'ui/Modal/Modal',
   component: Modal,
   argTypes: {
     visible: { control: 'boolean' },

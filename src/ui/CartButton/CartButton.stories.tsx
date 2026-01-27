@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CartButton from './CartButton';
 
 const meta: Meta<typeof CartButton> = {
-  title: 'features/Cart/CartButton',
+  title: 'ui/CartButton/CartButton',
   component: CartButton,
   argTypes: {
     count: {

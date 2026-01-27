@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../header/Header';
+import Header from '../../widgets/Header/Header';
 import './Layout.css';
 
 export interface LayoutProps {
