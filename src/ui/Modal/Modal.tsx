@@ -18,7 +18,7 @@ export default function Modal({ visible, children, className, onClose }: ModalPr
       role={visible ? 'dialog' : undefined}
       aria-modal={visible ? 'true' : undefined}
     >
-      <div className="modal-window" role="dialog" aria-modal="true">
+      <div className="modal-window" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" aria-label="Close" type="button" onClick={onClose}>
           ×
         </button>
