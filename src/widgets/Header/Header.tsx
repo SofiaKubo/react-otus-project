@@ -8,7 +8,11 @@ export default function Header() {
     <header className="header">
       <div className="header-inner">
         <Logo />
-        <ThemeSwitcher />
+
+        <div className="header-actions">
+          {/* Здесь будет LanguageSwitcher */}
+          <ThemeSwitcher />
+        </div>
       </div>
     </header>
   );

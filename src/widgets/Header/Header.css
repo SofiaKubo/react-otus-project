@@ -13,10 +13,16 @@
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 28px;
+  padding: 16px 24px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
