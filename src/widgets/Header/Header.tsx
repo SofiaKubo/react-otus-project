@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../ui/Logo/Logo';
 import './Header.css';
-import ThemeSwitcher from 'src/features/theme/ui/ThemeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from '../../features/theme/ui/ThemeSwitcher/ThemeSwitcher';
 
 export default function Header() {
   return (
