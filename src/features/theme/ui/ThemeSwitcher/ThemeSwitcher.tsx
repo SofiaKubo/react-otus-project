@@ -7,7 +7,7 @@ export default function ThemeSwitcher() {
 
   const isDark = theme === 'dark';
   const label = isDark ? 'Switch to light theme' : 'Switch to dark theme';
-  const icon = isDark ? '☀️' : '🌙';
+  const icon = isDark ? '🌙' : '☀️';
 
   return (
     <button
