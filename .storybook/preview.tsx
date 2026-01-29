@@ -33,7 +33,8 @@ const preview: Preview = {
       const theme = context.globals.theme || 'light';
 
       if (typeof document !== 'undefined') {
-        document.body.className = `theme-${theme}`;
+        document.body.classList.remove('theme-light', 'theme-dark');
+        document.body.classList.add(`theme-${theme}`);
       }
 
       return (
