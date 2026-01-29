@@ -28,6 +28,7 @@
   border-radius: 4px;
   font-size: 24px;
   line-height: 1;
+  background: var(--bg-tertiary);
   color: var(--text-primary);
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -37,7 +38,8 @@
 }
 
 .modal-close:hover {
-  background: var(--bg-tertiary);
+  background: var(--accent);
+  color: #ffffff;
 }
 
 .modal-content {
