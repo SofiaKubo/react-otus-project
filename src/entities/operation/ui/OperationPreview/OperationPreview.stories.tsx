@@ -1,5 +1,8 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useTranslation } from 'react-i18next';
 import OperationPreview from './OperationPreview';
+import type { Operation } from '../../model/types';
 
 const meta: Meta<typeof OperationPreview> = {
   title: 'entities/Operation/OperationPreview',
@@ -13,37 +16,46 @@ export default meta;
 
 type Story = StoryObj<typeof OperationPreview>;
 
-export const ShortDescription: Story = {
-  args: {
-    operation: {
-      id: 'op-1',
-      title: 'Grocery shopping',
-      description: 'Bought fruits and vegetables',
-      amount: 45.67,
-      date: '2024-03-18',
-      category: {
-        id: 'cat-1',
-        name: 'Groceries',
-      },
+function ShortDescriptionContent() {
+  const { t } = useTranslation();
+
+  const operation: Operation = {
+    id: 'op-1',
+    title: t('stories.operation.grocery.title'),
+    description: t('stories.operation.grocery.shortDescription'),
+    amount: 45.67,
+    date: '2024-03-18',
+    category: {
+      id: 'cat-1',
+      name: t('stories.operation.category.groceries'),
     },
-  },
+  };
+
+  return <OperationPreview operation={operation} />;
+}
+
+export const ShortDescription: Story = {
+  render: () => <ShortDescriptionContent />,
 };
 
-export const LongDescription: Story = {
-  args: {
-    operation: {
-      id: 'op-2',
-      title: 'Grocery shopping',
-      description:
-        'Bought fruits, vegetables, bread, milk, cheese and some snacks for the weekend. ' +
-        'Also picked up a few household items and cleaning supplies. ' +
-        'This description is intentionally long to demonstrate how text truncation works.',
-      amount: 45.67,
-      date: '2024-03-18',
-      category: {
-        id: 'cat-1',
-        name: 'Groceries',
-      },
+function LongDescriptionContent() {
+  const { t } = useTranslation();
+
+  const operation: Operation = {
+    id: 'op-2',
+    title: t('stories.operation.grocery.title'),
+    description: t('stories.operation.grocery.longDescription'),
+    amount: 45.67,
+    date: '2024-03-18',
+    category: {
+      id: 'cat-1',
+      name: t('stories.operation.category.groceries'),
     },
-  },
+  };
+
+  return <OperationPreview operation={operation} />;
+}
+
+export const LongDescription: Story = {
+  render: () => <LongDescriptionContent />,
 };
