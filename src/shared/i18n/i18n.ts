@@ -32,6 +32,19 @@ const resources = {
           button: 'Open Modal Window',
           fallback: 'You did not enter any text',
         },
+        confirm: {
+          title: 'Question',
+          question: 'Are you sure to leave?',
+          ok: 'OK',
+          cancel: 'Cancel',
+        },
+        closed: {
+          content: 'Page content without modal',
+          description: 'Modal is not rendered (conditional rendering pattern)',
+        },
+        simple: {
+          text: 'This is a simple modal with text only',
+        },
       },
       product: {
         preview: {
