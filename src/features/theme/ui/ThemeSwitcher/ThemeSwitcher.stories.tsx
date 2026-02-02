@@ -15,7 +15,7 @@ export const Default: Story = {
   render: () => (
     <div
       style={{
-        padding: '10px',
+        padding: '20px',
       }}
     >
       <ThemeSwitcher />

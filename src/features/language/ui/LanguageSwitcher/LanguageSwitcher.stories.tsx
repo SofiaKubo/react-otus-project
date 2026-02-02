@@ -12,7 +12,15 @@ export default meta;
 type Story = StoryObj<typeof LanguageSwitcher>;
 
 export const Default: Story = {
-  render: () => <LanguageSwitcher />,
+  render: () => (
+    <div
+      style={{
+        padding: '20px',
+      }}
+    >
+      <LanguageSwitcher />
+    </div>
+  ),
 };
 
 export const InHeader: Story = {
