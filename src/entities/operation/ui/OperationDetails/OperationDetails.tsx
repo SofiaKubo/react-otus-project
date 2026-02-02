@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Operation } from '../../model/types';
+import { useTranslation } from 'react-i18next';
 import './OperationDetails.css';
 
 export interface OperationDetailsProps {
@@ -7,6 +8,7 @@ export interface OperationDetailsProps {
 }
 
 export default function OperationDetails({ operation }: OperationDetailsProps) {
+  const { t } = useTranslation();
   return (
     <div className="operation-details">
       <div className="operation-details__header">
@@ -25,7 +27,7 @@ export default function OperationDetails({ operation }: OperationDetailsProps) {
 
         <div className="operation-details__actions">
           <button className="confirm-btn" type="button">
-            Edit
+            {t('operation.details.edit')}
           </button>
         </div>
       </div>
