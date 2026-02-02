@@ -1,49 +1,39 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Modal from '../../ui/Modal/Modal';
 import './ModalDemo.css';
 
 export default function ModalDemo() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [inputText, setInputText] = useState('');
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(event.target.value);
-  };
-
-  const handleOpenModal = () => {
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-  };
-
   return (
     <div className="modal-demo">
-      <h2 className="modal-demo__title">Modal Window Demo</h2>
+      <h2 className="modal-demo__title">{t('modal.demo.title')}</h2>
 
       <div className="modal-demo__input-group">
         <label htmlFor="modal-text" className="modal-demo__label">
-          Enter text for the modal window:
+          {t('modal.demo.label')}
         </label>
 
         <input
           id="modal-text"
           type="text"
           value={inputText}
-          onChange={handleInputChange}
-          placeholder="Enter your text here..."
+          onChange={(e) => setInputText(e.target.value)}
+          placeholder={t('modal.demo.placeholder')}
           className="modal-demo__input"
         />
       </div>
 
-      <button onClick={handleOpenModal} className="modal-demo__button">
-        Open Modal Window
+      <button onClick={() => setIsOpen(true)} className="modal-demo__button">
+        {t('modal.demo.button')}
       </button>
 
       {isOpen && (
-        <Modal onClose={handleCloseModal}>
-          <p className="modal-demo__modal-content">{inputText || 'You did not enter any text'}</p>
+        <Modal onClose={() => setIsOpen(false)}>
+          <p className="modal-demo__modal-content">{inputText || t('modal.demo.fallback')}</p>
         </Modal>
       )}
     </div>
