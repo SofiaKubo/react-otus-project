@@ -1,5 +1,8 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useTranslation } from 'react-i18next';
 import OperationDetails from './OperationDetails';
+import type { Operation } from '../../model/types';
 
 const meta: Meta<typeof OperationDetails> = {
   title: 'entities/Operation/OperationDetails',
@@ -13,21 +16,24 @@ export default meta;
 
 type Story = StoryObj<typeof OperationDetails>;
 
-export const Default: Story = {
-  args: {
-    operation: {
-      id: 'op-2',
-      title: 'Grocery shopping',
-      description:
-        'Bought fruits, vegetables, bread, milk, cheese and some snacks for the weekend. ' +
-        'Also picked up a few household items and cleaning supplies. ' +
-        'This description is intentionally long to demonstrate how text truncation works.',
-      amount: 45.67,
-      date: '2024-03-18',
-      category: {
-        id: 'cat-1',
-        name: 'Groceries',
-      },
+function DefaultContent() {
+  const { t } = useTranslation();
+
+  const operation: Operation = {
+    id: 'op-2',
+    title: t('stories.operation.grocery.title'),
+    description: t('stories.operation.grocery.longDescription'),
+    amount: 45.67,
+    date: '2024-03-18',
+    category: {
+      id: 'cat-1',
+      name: t('stories.operation.category.groceries'),
     },
-  },
+  };
+
+  return <OperationDetails operation={operation} />;
+}
+
+export const Default: Story = {
+  render: () => <DefaultContent />,
 };
