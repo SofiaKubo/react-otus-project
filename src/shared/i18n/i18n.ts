@@ -6,10 +6,18 @@ const resources = {
     translation: {
       common: {
         language: 'Language',
-        hello: 'Hello!',
+        theme: 'Theme',
+        light: 'Light',
+        dark: 'Dark',
       },
       modal: {
-        title: 'Modal Window Demo',
+        demo: {
+          title: 'Modal Window Demo',
+          label: 'Enter text for the modal window:',
+          placeholder: 'Enter your text here...',
+          button: 'Open Modal Window',
+          fallback: 'You did not enter any text',
+        },
       },
     },
   },
@@ -17,10 +25,18 @@ const resources = {
     translation: {
       common: {
         language: 'Язык',
-        hello: 'Привет!',
+        theme: 'Тема',
+        light: 'Светлая',
+        dark: 'Тёмная',
       },
       modal: {
-        title: 'Демо модального окна',
+        demo: {
+          title: 'Демо модального окна',
+          label: 'Введите текст для модального окна:',
+          placeholder: 'Введите текст здесь...',
+          button: 'Открыть модальное окно',
+          fallback: 'Вы не ввели текст',
+        },
       },
     },
   },
