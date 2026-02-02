@@ -1,20 +1,22 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../../../app/providers/ThemeProvider';
 import './ThemeSwitcher.css';
 
 export default function ThemeSwitcher() {
+  const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
 
   const isDark = theme === 'dark';
-  const label = isDark ? 'Switch to light theme' : 'Switch to dark theme';
-  const icon = isDark ? '🌙' : '☀️';
+  const label = isDark ? t('common.light') : t('common.dark');
+  const icon = isDark ? '☀️' : '🌙';
 
   return (
     <button
       type="button"
       className="theme-switcher"
       onClick={toggleTheme}
-      aria-label={label}
+      aria-label={`Switch to ${label}`}
       title={label}
       data-theme={theme}
     >
@@ -22,7 +24,7 @@ export default function ThemeSwitcher() {
         {icon}
       </span>
 
-      <span className="theme-switcher__text">{isDark ? 'Dark' : 'Light'}</span>
+      <span className="theme-switcher__text">{label}</span>
     </button>
   );
 }
