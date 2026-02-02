@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './CartButton.css';
 
 export interface CartButtonProps {
@@ -6,10 +7,12 @@ export interface CartButtonProps {
 }
 
 export default function CartButton({ count }: CartButtonProps) {
+  const { t } = useTranslation();
+
   if (count === 0) {
     return (
       <button type="button" className="cart-button cart-button--empty">
-        Add to cart
+        {t('product.cart.add')}
       </button>
     );
   }
