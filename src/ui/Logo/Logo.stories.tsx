@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Logo from './Logo';
 
 const meta: Meta<typeof Logo> = {
-  title: 'shared/Logo',
+  title: 'ui/Logo/Logo',
   component: Logo,
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Product } from '../../model/types';
 import './ProductDetails.css';
-import CartButton from '../../../../features/cart/ui/CartButton/CartButton';
+import CartButton from '../../../../ui/CartButton/CartButton';
 export interface ProductDetailsProps {
   product: Product;
   cartCount: number;

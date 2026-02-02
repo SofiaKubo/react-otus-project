@@ -1,5 +1,8 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useTranslation } from 'react-i18next';
 import ProductDetails from './ProductDetails';
+import type { Product } from '../../model/types';
 
 const meta: Meta<typeof ProductDetails> = {
   title: 'entities/Product/ProductDetails',
@@ -13,38 +16,46 @@ export default meta;
 
 type Story = StoryObj<typeof ProductDetails>;
 
-export const Default: Story = {
-  args: {
-    product: {
-      id: 'prod-1',
-      title: 'Wireless Headphones',
-      description:
-        'High-quality wireless headphones with active noise cancellation, long battery life and comfortable ear cushions. Suitable for everyday use, work and travel. These premium headphones feature advanced Bluetooth 5.0 technology for seamless connectivity, touch controls for easy operation, and a foldable design for portability. The rechargeable battery provides up to 30 hours of continuous playback, and the quick charge feature gives you 5 hours of use with just 10 minutes of charging. Compatible with all major devices and voice assistants.',
-      price: 199.99,
-      image: '/images/headphones.avif',
-      category: {
-        id: 'cat-1',
-        name: 'Electronics',
-      },
+function DefaultContent() {
+  const { t } = useTranslation();
+
+  const product: Product = {
+    id: 'prod-1',
+    title: t('stories.product.headphones.title'),
+    description: t('stories.product.headphones.longDescription'),
+    price: 199.99,
+    image: '/images/headphones.avif',
+    category: {
+      id: 'cat-1',
+      name: t('stories.product.category.electronics'),
     },
-    cartCount: 0,
-  },
+  };
+
+  return <ProductDetails product={product} cartCount={0} />;
+}
+
+export const Default: Story = {
+  render: () => <DefaultContent />,
 };
 
-export const WithItemsInCart: Story = {
-  args: {
-    product: {
-      id: 'prod-1',
-      title: 'Wireless Headphones',
-      description:
-        'High-quality wireless headphones with active noise cancellation, long battery life and comfortable ear cushions. Suitable for everyday use, work and travel. These premium headphones feature advanced Bluetooth 5.0 technology for seamless connectivity, touch controls for easy operation, and a foldable design for portability. The rechargeable battery provides up to 30 hours of continuous playback, and the quick charge feature gives you 5 hours of use with just 10 minutes of charging. Compatible with all major devices and voice assistants.',
-      price: 199.99,
-      image: '/images/headphones.avif',
-      category: {
-        id: 'cat-1',
-        name: 'Electronics',
-      },
+function WithItemsInCartContent() {
+  const { t } = useTranslation();
+
+  const product: Product = {
+    id: 'prod-1',
+    title: t('stories.product.headphones.title'),
+    description: t('stories.product.headphones.longDescription'),
+    price: 199.99,
+    image: '/images/headphones.avif',
+    category: {
+      id: 'cat-1',
+      name: t('stories.product.category.electronics'),
     },
-    cartCount: 3,
-  },
+  };
+
+  return <ProductDetails product={product} cartCount={3} />;
+}
+
+export const WithItemsInCart: Story = {
+  render: () => <WithItemsInCartContent />,
 };

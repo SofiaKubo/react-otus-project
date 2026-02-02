@@ -1,13 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import type { CartProduct } from '../../model/types';
 import './ProductCartItem.css';
-import CartButton from '../../../../features/cart/ui/CartButton/CartButton';
+import CartButton from '../../../../ui/CartButton/CartButton';
+
 export interface ProductCartItemProps {
   product: CartProduct;
   quantity: number;
 }
 
 export default function ProductCartItem({ product, quantity }: ProductCartItemProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="product-cart-item">
       <div className="product-cart-item__image">
@@ -23,7 +27,7 @@ export default function ProductCartItem({ product, quantity }: ProductCartItemPr
           <CartButton count={quantity} />
 
           <button className="product-cart-item__remove" type="button">
-            Remove
+            {t('product.cart.remove')}
           </button>
         </div>
       </div>

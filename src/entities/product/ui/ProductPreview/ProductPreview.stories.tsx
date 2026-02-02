@@ -1,5 +1,8 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useTranslation } from 'react-i18next';
 import ProductPreview from './ProductPreview';
+import type { Product } from '../../model/types';
 
 const meta: Meta<typeof ProductPreview> = {
   title: 'entities/Product/ProductPreview',
@@ -8,58 +11,73 @@ const meta: Meta<typeof ProductPreview> = {
     product: { control: false },
   },
 };
+
 export default meta;
 
 type Story = StoryObj<typeof ProductPreview>;
 
-export const ShortDescription: Story = {
-  args: {
-    product: {
-      id: 'prod-1',
-      title: 'Wireless Headphones',
-      description: 'High-quality wireless headphones suitable for everyday use.',
-      price: 199.99,
-      image: '/images/headphones.avif',
-      category: {
-        id: 'cat-1',
-        name: 'Electronics',
-      },
+function ShortDescriptionContent() {
+  const { t } = useTranslation();
+
+  const product: Product = {
+    id: 'prod-1',
+    title: t('stories.product.headphones.title'),
+    description: t('stories.product.headphones.shortDescription'),
+    price: 199.99,
+    image: '/images/headphones.avif',
+    category: {
+      id: 'cat-1',
+      name: t('stories.product.category.electronics'),
     },
-    cartCount: 0,
-  },
+  };
+
+  return <ProductPreview product={product} cartCount={0} />;
+}
+
+export const ShortDescription: Story = {
+  render: () => <ShortDescriptionContent />,
 };
+
+function LongDescriptionContent() {
+  const { t } = useTranslation();
+
+  const product: Product = {
+    id: 'prod-2',
+    title: t('stories.product.headphones.title'),
+    description: t('stories.product.headphones.longDescription'),
+    price: 199.99,
+    image: '/images/headphones.avif',
+    category: {
+      id: 'cat-1',
+      name: t('stories.product.category.electronics'),
+    },
+  };
+
+  return <ProductPreview product={product} cartCount={0} />;
+}
 
 export const LongDescription: Story = {
-  args: {
-    product: {
-      id: 'prod-2',
-      title: 'Wireless Headphones',
-      description:
-        'High-quality wireless headphones with active noise cancellation, long battery life and comfortable ear cushions. Suitable for everyday use, work and travel. These premium headphones feature advanced Bluetooth 5.0 technology for seamless connectivity, touch controls for easy operation, and a foldable design for portability. The rechargeable battery provides up to 30 hours of continuous playback, and the quick charge feature gives you 5 hours of use with just 10 minutes of charging. Compatible with all major devices and voice assistants.',
-      price: 199.99,
-      image: '/images/headphones.avif',
-      category: {
-        id: 'cat-1',
-        name: 'Electronics',
-      },
-    },
-    cartCount: 0,
-  },
+  render: () => <LongDescriptionContent />,
 };
 
-export const WithItemsInCart: Story = {
-  args: {
-    product: {
-      id: 'prod-1',
-      title: 'Wireless Headphones',
-      description: 'High-quality wireless headphones suitable for everyday use.',
-      price: 199.99,
-      image: '/images/headphones.avif',
-      category: {
-        id: 'cat-1',
-        name: 'Electronics',
-      },
+function WithItemsInCartContent() {
+  const { t } = useTranslation();
+
+  const product: Product = {
+    id: 'prod-1',
+    title: t('stories.product.headphones.title'),
+    description: t('stories.product.headphones.shortDescription'),
+    price: 199.99,
+    image: '/images/headphones.avif',
+    category: {
+      id: 'cat-1',
+      name: t('stories.product.category.electronics'),
     },
-    cartCount: 3,
-  },
+  };
+
+  return <ProductPreview product={product} cartCount={3} />;
+}
+
+export const WithItemsInCart: Story = {
+  render: () => <WithItemsInCartContent />,
 };
