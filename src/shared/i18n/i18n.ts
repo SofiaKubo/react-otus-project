@@ -19,6 +19,37 @@ const resources = {
           fallback: 'You did not enter any text',
         },
       },
+      product: {
+        preview: {
+          category: 'Category',
+          price: 'Price',
+        },
+        details: {
+          category: 'Category',
+          price: 'Price',
+          description: 'Description',
+        },
+        cart: {
+          category: 'Category',
+          price: 'Price',
+          remove: 'Remove',
+          add: 'Add to Cart',
+        },
+      },
+      operation: {
+        preview: {
+          amount: 'Amount',
+          category: 'Category',
+          date: 'Date',
+        },
+        details: {
+          amount: 'Amount',
+          category: 'Category',
+          date: 'Date',
+          description: 'Description',
+          confirm: 'Confirm',
+        },
+      },
     },
   },
   ru: {
@@ -36,6 +67,37 @@ const resources = {
           placeholder: 'Введите текст здесь...',
           button: 'Открыть модальное окно',
           fallback: 'Вы не ввели текст',
+        },
+      },
+      product: {
+        preview: {
+          category: 'Категория',
+          price: 'Цена',
+        },
+        details: {
+          category: 'Категория',
+          price: 'Цена',
+          description: 'Описание',
+        },
+        cart: {
+          category: 'Категория',
+          price: 'Цена',
+          remove: 'Удалить',
+          add: 'В корзину',
+        },
+      },
+      operation: {
+        preview: {
+          amount: 'Сумма',
+          category: 'Категория',
+          date: 'Дата',
+        },
+        details: {
+          amount: 'Сумма',
+          category: 'Категория',
+          date: 'Дата',
+          description: 'Описание',
+          confirm: 'Подтвердить',
         },
       },
     },
