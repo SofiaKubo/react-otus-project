@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Modal.css';
 
 export interface ModalProps {
@@ -8,6 +9,8 @@ export interface ModalProps {
 }
 
 export default function Modal({ children, className, onClose }: ModalProps) {
+  const { t } = useTranslation();
+
   return (
     <div
       className={['modal-overlay', className].filter(Boolean).join(' ')}
@@ -16,7 +19,7 @@ export default function Modal({ children, className, onClose }: ModalProps) {
       onClick={onClose}
     >
       <div className="modal-window" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" aria-label="Close" type="button" onClick={onClose}>
+        <button className="modal-close" aria-label={t('common.close')} type="button" onClick={onClose}>
           ×
         </button>
 
