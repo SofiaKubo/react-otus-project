@@ -65,6 +65,30 @@ const resources = {
           edit: 'Edit',
         },
       },
+      stories: {
+        product: {
+          headphones: {
+            title: 'Wireless Headphones',
+            shortDescription: 'High-quality wireless headphones suitable for everyday use.',
+            longDescription:
+              'High-quality wireless headphones with active noise cancellation, long battery life and comfortable ear cushions. Suitable for everyday use, work and travel. These premium headphones feature advanced Bluetooth 5.0 technology for seamless connectivity, touch controls for easy operation, and a foldable design for portability. The rechargeable battery provides up to 30 hours of continuous playback, and the quick charge feature gives you 5 hours of use with just 10 minutes of charging. Compatible with all major devices and voice assistants.',
+          },
+          category: {
+            electronics: 'Electronics',
+          },
+        },
+        operation: {
+          grocery: {
+            title: 'Grocery shopping',
+            shortDescription: 'Bought fruits and vegetables',
+            longDescription:
+              'Bought fruits, vegetables, bread, milk, cheese and some snacks for the weekend. Also picked up a few household items and cleaning supplies. This description is intentionally long to demonstrate how text truncation works.',
+          },
+          category: {
+            groceries: 'Groceries',
+          },
+        },
+      },
     },
   },
   ru: {
@@ -141,6 +165,30 @@ const resources = {
           description: 'Описание',
           confirm: 'Подтвердить',
           edit: 'Редактировать',
+        },
+      },
+      stories: {
+        product: {
+          headphones: {
+            title: 'Беспроводные наушники',
+            shortDescription: 'Высококачественные беспроводные наушники для повседневного использования.',
+            longDescription:
+              'Высококачественные беспроводные наушники с активным шумоподавлением, долгим временем работы от батареи и удобными амбушюрами. Подходят для повседневного использования, работы и путешествий. Эти премиальные наушники оснащены передовой технологией Bluetooth 5.0 для бесшовного подключения, сенсорным управлением для удобства и складной конструкцией для портативности. Аккумулятор обеспечивает до 30 часов непрерывного воспроизведения, а функция быстрой зарядки дает 5 часов использования всего за 10 минут зарядки. Совместимы со всеми основными устройствами и голосовыми помощниками.',
+          },
+          category: {
+            electronics: 'Электроника',
+          },
+        },
+        operation: {
+          grocery: {
+            title: 'Покупка продуктов',
+            shortDescription: 'Купили фрукты и овощи',
+            longDescription:
+              'Купили фрукты, овощи, хлеб, молоко, сыр и закуски на выходные. Также взяли несколько товаров для дома и чистящие средства. Это описание намеренно длинное, чтобы продемонстрировать работу обрезки текста.',
+          },
+          category: {
+            groceries: 'Продукты',
+          },
         },
       },
     },
