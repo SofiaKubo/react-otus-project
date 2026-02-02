@@ -9,6 +9,20 @@ const resources = {
         theme: 'Theme',
         light: 'Light',
         dark: 'Dark',
+        close: 'Close',
+      },
+      home: {
+        title: 'React Demo Application',
+        description:
+          'This application demonstrates core React concepts, reusable UI components, and application-level features such as theming and state management.',
+        featuresTitle: 'Available features',
+        features: {
+          modal: 'Modal window with controlled state',
+          theme: 'Global theme switching using Context',
+          language: 'Global language switching using Context',
+          components: 'Reusable UI components',
+          storybook: 'Storybook-driven development',
+        },
       },
       modal: {
         demo: {
@@ -33,7 +47,7 @@ const resources = {
           category: 'Category',
           price: 'Price',
           remove: 'Remove',
-          add: 'Add to Cart',
+          add: 'Add to cart',
         },
       },
       operation: {
@@ -59,6 +73,20 @@ const resources = {
         theme: 'Тема',
         light: 'Светлая',
         dark: 'Тёмная',
+        close: 'Закрыть',
+      },
+      home: {
+        title: 'React демо-приложение',
+        description:
+          'Это приложение демонстрирует основные концепции React, переиспользуемые UI компоненты и функции уровня приложения, такие как темы и управление состоянием.',
+        featuresTitle: 'Доступные функции',
+        features: {
+          modal: 'Модальное окно с контролируемым состоянием',
+          theme: 'Глобальное переключение темы через Context',
+          language: 'Глобальное переключение языка через Context',
+          components: 'Переиспользуемые UI компоненты',
+          storybook: 'Разработка через Storybook',
+        },
       },
       modal: {
         demo: {
